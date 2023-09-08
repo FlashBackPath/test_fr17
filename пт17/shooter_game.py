@@ -146,23 +146,7 @@ while game:
 
         pygame.sprite.groupcollide(bullets, stones, True, False)
         lose = pygame.sprite.spritecollide(hero, stones, False)
-        if lose:
-            screen = 'menu'
-            is_win = 1
-
-        if is_duo:
-            lose = pygame.sprite.spritecollide(hero2, stones, False)
-            if lose:
-                screen = 'menu'
-                is_win = 1
-
-        if score == 10:
-            screen = 'menu'
-            is_win = 2
-
-        if lost == 5:
-            screen = 'menu'
-            is_win = 1
+    
 
         ufos.draw(window)
         ufos.update()

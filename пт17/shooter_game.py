@@ -12,11 +12,11 @@ clock = pygame.time.Clock()
 pygame.mixer.init()
 pygame.mixer.music.load('space.ogg')
 pygame.mixer.music.set_volume(0.3)
-# pygame.mixer.music.play(999)
+pygame.mixer.music.play(999)
 
 fire = pygame.mixer.Sound('fire.ogg')
 fire.set_volume(0.3)
-# fire.play()
+fire.play()
 
 
 class GameSprite(pygame.sprite.Sprite):
@@ -132,6 +132,8 @@ while game:
 
         pygame.display.update()
     if screen == 'main':
+        pygame.display.update()
+        clock.tick(60)
         text_lost = font1.render(f'Пропущено: {lost}', True, (255, 255, 255))
         window.blit(text_lost, (10, 50))
 
@@ -174,8 +176,6 @@ while game:
                     bullets.add(bullet1)
                     # fire.play()
 
-        pygame.display.update()
-        clock.tick(60)
 
 
 
